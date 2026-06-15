@@ -4,7 +4,7 @@ const Controls = ({ searchTerm, onSearchChange, onFilterOpen }) => {
   return (
     <div className="controls">
       <div className="search">
-        <img src="/assets/icons/search_icon.svg" alt="" className="search__icon" />
+        <img src="../assets/icons/search_icon.svg" alt="" className="search__icon" />
         <input
           type="text"
           className="search__input"
