@@ -1,0 +1,44 @@
+.header {
+  padding: 16px $container-px-mobile;
+
+  @include respond-to('sm') {
+    padding: 20px $container-px-sm;
+  }
+
+  @include respond-to('md') {
+    padding: 24px $container-px-md;
+  }
+
+  @include respond-to('lg') {
+    padding: 32px $container-px-lg;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: flex-end;
+    max-width: $container-max-width;
+    margin: 0 auto;
+  }
+}
+
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--color-surface-soft) 88%, transparent);
+  transition: opacity 0.2s ease, background-color 0.25s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    filter: var(--color-icon-strong);
+    transition: filter 0.25s ease;
+  }
+}

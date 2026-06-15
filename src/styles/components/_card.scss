@@ -1,0 +1,295 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--color-card);
+  height: 100%;
+
+  &__img-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--color-surface);
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    flex: 1;
+    min-height: 60px;
+  }
+  
+.gallery:has(.card:first-child:nth-last-child(2)) .card {
+  height: auto;
+}
+  &__accent-line {
+    width: 2px;
+    align-self: stretch;
+    background-color: var(--color-accent);
+    flex-shrink: 0;
+    margin-left: -19px;
+  }
+
+  &__meta {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__year {
+    display: block;
+    font-family: $font-primary;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
+  }
+
+  &__arrow {
+    width: 48px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: var(--color-accent);
+
+    img {
+      width: 16px;
+      height: 16px;
+      filter: var(--color-icon-white);
+    }
+  }
+
+  &:hover &__img {
+    transform: scale(1.04);
+  }
+
+  @include respond-to('sm') {
+    &__body {
+      padding: 16px 18px;
+    }
+
+    &__title,
+    &__year {
+      font-size: 12px;
+    }
+
+    &__arrow {
+      width: 54px;
+    }
+  }
+
+  @include respond-to('lg') {
+    &__body {
+      gap: 16px;
+      padding: 18px 24px;
+    }
+
+    &__title,
+    &__year {
+      font-size: 13px;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  background: transparent;
+}
+
+.card__img-wrap {
+  aspect-ratio: 16 / 9;
+}
+
+.card__img {
+  transition: transform 0.45s ease;
+}
+
+.card__body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  min-height: 60px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.card__default,
+.card__hover-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.card__default {
+  position: relative;
+  width: 84%;
+  min-height: 60px;
+  padding: 10px 62px 10px 14px;
+  background-color: var(--color-card);
+}
+
+.card__hover-meta {
+  display: none;
+}
+
+.card__meta,
+.card__details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__details {
+  gap: 4px;
+}
+
+.card__artist {
+  font-family: $font-display;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.card__location {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+@include respond-to('sm') {
+  .card__default {
+    width: 82%;
+    min-height: 76px;
+    padding: 12px 70px 12px 16px;
+  }
+
+  .card__artist {
+    font-size: 12px;
+  }
+}
+
+@include respond-to('md') {
+  .card {
+    aspect-ratio: 3 / 2;
+  }
+
+  .card__img-wrap {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .card__body {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 82%;
+    min-height: 82px;
+    overflow: hidden;
+    background-color: var(--color-card);
+  }
+
+  .card__default,
+  .card__hover-meta {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    min-height: 82px;
+    padding: 12px 18px;
+    width: 100%;
+    background: transparent;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  .card__hover-meta {
+    display: flex;
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  .card__arrow {
+    display: none;
+  }
+
+  .card:hover .card__img {
+    transform: scale(1.08);
+  }
+
+  .card:hover .card__default {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  .card:hover .card__hover-meta {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@include respond-to('lg') {
+  .card__body {
+    width: min(80%, 340px);
+  }
+
+  .card__default,
+  .card__hover-meta {
+    padding: 14px 20px;
+  }
+
+  .card__artist {
+    font-size: 13px;
+  }
+}
+
+.card__default .card__arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  min-height: 100%;
+}
+
+@include respond-to('sm') {
+  .card__default .card__arrow {
+    width: 54px;
+  }
+}

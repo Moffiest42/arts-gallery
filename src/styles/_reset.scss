@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  --color-bg: #{$color-primary-black};
+  --color-surface: #{$color-primary-black};
+  --color-surface-soft: #{$color-secondary-black};
+  --color-card: #{$color-primary-black};
+  --color-text: #{$color-primary-white};
+  --color-text-muted: #{$color-secondary-gray};
+  --color-border: #{$color-primary-dark-gray};
+  --color-overlay: rgba(0, 0, 0, 0.45);
+  --color-accent: #{$color-accent-gold};
+  --color-icon-filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(0%) hue-rotate(170deg) brightness(98%) contrast(88%);
+  --color-icon-strong: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(152deg) brightness(105%) contrast(101%);
+  --color-icon-accent: brightness(0) saturate(100%) invert(61%) sepia(15%) saturate(882%) hue-rotate(354deg) brightness(90%) contrast(88%);
+  --color-icon-white: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(152deg) brightness(105%) contrast(101%);
+  --color-pagination-active-bg: rgba(255, 255, 255, 0.08);
+  --filter-field-bg: #1d1a1a;
+  --filter-field-border: transparent;
+  --filter-field-text: #e7e2dc;
+  --filter-field-placeholder: rgba(231, 226, 220, 0.58);
+  --filter-divider: rgba(231, 226, 220, 0.42);
+  --filter-chevron: rgba(231, 226, 220, 0.68);
+  --filter-option-bg: #241f1f;
+  --filter-option-text: #f1ebe4;
+}
+
+body[data-theme='light'] {
+  --color-bg: #{$color-secondary-white};
+  --color-surface: #{$color-primary-white};
+  --color-surface-soft: #{$color-secondary-white};
+  --color-card: #{$color-primary-white};
+  --color-text: #{$color-primary-black};
+  --color-text-muted: #{$color-primary-dark-gray};
+  --color-border: #{$color-primary-light-gray};
+  --color-overlay: rgba(18, 18, 18, 0.16);
+  --color-accent: #{$color-accent-red};
+  --color-icon-filter: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(11%) hue-rotate(334deg) brightness(95%) contrast(93%);
+  --color-icon-strong: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(11%) hue-rotate(334deg) brightness(95%) contrast(93%);
+  --color-icon-accent: brightness(0) saturate(100%) invert(34%) sepia(11%) saturate(1777%) hue-rotate(314deg) brightness(97%) contrast(89%);
+  --color-icon-white: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(152deg) brightness(105%) contrast(101%);
+  --color-pagination-active-bg: rgba(18, 18, 18, 0.08);
+  --filter-field-bg: #ffffff;
+  --filter-field-border: #d5d0c9;
+  --filter-field-text: #47413c;
+  --filter-field-placeholder: rgba(71, 65, 60, 0.46);
+  --filter-divider: rgba(71, 65, 60, 0.42);
+  --filter-chevron: rgba(71, 65, 60, 0.56);
+  --filter-option-bg: #ffffff;
+  --filter-option-text: #47413c;
+}
+
+body {
+  font-family: $font-primary;
+  font-weight: 300;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}

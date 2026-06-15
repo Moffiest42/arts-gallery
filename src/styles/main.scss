@@ -1,0 +1,111 @@
+@import './variables';
+@import './fonts';
+@import './mixins';
+@import './reset';
+
+
+body {
+  background-color: var(--color-bg);
+  overflow-x: hidden; 
+}
+
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  
+  @include respond-to('lg') {
+    max-width: $container-max-width;
+  }
+}
+
+.main {
+  padding-bottom: 48px;
+  width: 100%;
+
+  @include respond-to('lg') {
+    padding-bottom: 80px;
+  }
+}
+
+
+.controls,
+.gallery,
+.pagination {
+  padding-left: 16px;
+  padding-right: 16px;
+  
+  @include respond-to('sm') {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  @include respond-to('md') {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  
+  @include respond-to('lg') {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+.gallery {
+  padding-left: 16px;
+  padding-right: 16px;
+  
+  @include respond-to('sm') {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  @include respond-to('md') {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  
+  @include respond-to('lg') {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+
+
+.gallery-wrapper {
+  flex: 1;
+  min-height: 400px; 
+}
+
+.pagination-wrapper {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px); 
+  padding-bottom: 48px;
+
+  @include respond-to('lg') {
+    min-height: calc(100vh - 100px);
+    padding-bottom: 80px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+@import './components/header';
+@import './components/controls';
+@import './components/filter';
+@import './components/gallery';
+@import './components/card';
+@import './components/pagination';

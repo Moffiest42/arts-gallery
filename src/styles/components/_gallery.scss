@@ -1,0 +1,41 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $grid-gap-mobile;
+  margin-bottom: 40px;
+  
+  @include respond-to('sm') {
+    gap: $grid-gap-sm;
+    margin-bottom: 48px;
+  }
+  
+  @include respond-to('lg') {
+    gap: $grid-gap-lg;
+    margin-bottom: 60px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  @include respond-to('sm') {
+    .card {
+      width: calc((100% - #{$grid-gap-sm}) / 2);
+    }
+  }
+
+
+  @include respond-to('md') {
+    .card {
+      width: calc((100% - (#{$grid-gap-md} * 2)) / 3);
+    }
+  }
+
+  @include respond-to('lg') {
+    .card {
+      width: calc((100% - (#{$grid-gap-lg} * 2)) / 3);
+    }
+  }
+  
+
+}

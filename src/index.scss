@@ -1,0 +1,23 @@
+@import './styles/main.scss';
+@import './styles/main.scss';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;  
+}
+
+body {
+  background-color: var(--color-bg);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
